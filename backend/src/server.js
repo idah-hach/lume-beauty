@@ -5,7 +5,6 @@ import { PrismaClient } from "@prisma/client";
 import { requireAuth } from "./middleware/requireAuth.js";
 
 const app = express();
-const PORT = 5000;
 
 const prisma = new PrismaClient();
 
@@ -326,6 +325,8 @@ app.put("/api/orders/:id", requireAuth, async (req, res) => {
 // START SERVER
 //
 
+const PORT = process.env.PORT || 5000;
+
 app.listen(PORT, () => {
-  console.log(`LUMÉ Beauty API running on http://localhost:${PORT}`);
+  console.log(`LUMÉ Beauty API running on port ${PORT}`);
 });
