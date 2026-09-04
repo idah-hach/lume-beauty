@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase";
 
-const PRODUCTS_API = "http://localhost:5000/api/products";
-const ORDERS_API = "http://localhost:5000/api/orders";
+const PRODUCTS_API = `${import.meta.env.VITE_API_URL}/products`;
+const ORDERS_API = `${import.meta.env.VITE_API_URL}/orders`;
 
 const DashboardOverview = () => {
   const [products, setProducts] = useState([]);
