@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 const DashboardSettings = () => {
-  // =========================
+  //
   // Store Settings
-  // =========================
+  //
 
   const [storeSettings, setStoreSettings] = useState({
     storeName: "LUMÉ Beauty",
@@ -12,9 +12,9 @@ const DashboardSettings = () => {
     address: "Beirut, Lebanon",
   });
 
-  // =========================
+  //
   // Notification Settings
-  // =========================
+  //
 
   const [notifications, setNotifications] = useState({
     newOrders: true,
@@ -22,9 +22,9 @@ const DashboardSettings = () => {
     customerMessages: false,
   });
 
-  // =========================
+  //
   // Handle Store Input
-  // =========================
+  //
 
   const handleStoreChange = (event) => {
     const { name, value } = event.target;
@@ -35,9 +35,9 @@ const DashboardSettings = () => {
     }));
   };
 
-  // =========================
+  //
   // Handle Notification
-  // =========================
+  //
 
   const handleNotificationChange = (event) => {
     const { name, checked } = event.target;
@@ -48,9 +48,9 @@ const DashboardSettings = () => {
     }));
   };
 
-  // =========================
+  //
   // Save Settings
-  // =========================
+  //
 
   const handleSave = (event) => {
     event.preventDefault();
@@ -61,15 +61,15 @@ const DashboardSettings = () => {
     alert("Settings saved successfully!");
   };
 
-  // =========================
+  //
   // JSX
-  // =========================
+  //
 
   return (
     <section className="dashboard-settings">
-      {/* =========================
+      {/* 
           HEADER
-      ========================= */}
+       */}
 
       <div className="section-title">
         <div>
@@ -79,14 +79,14 @@ const DashboardSettings = () => {
         </div>
       </div>
 
-      {/* =========================
+      {/* 
           SETTINGS FORM
-      ========================= */}
+       */}
 
       <form className="settings-form" onSubmit={handleSave}>
-        {/* =========================
+        {/* 
             STORE INFORMATION
-        ========================= */}
+         */}
 
         <div className="settings-card">
           <div className="settings-card-header">
@@ -150,9 +150,9 @@ const DashboardSettings = () => {
           </div>
         </div>
 
-        {/* =========================
+        {/* 
             NOTIFICATIONS
-        ========================= */}
+         */}
 
         <div className="settings-card">
           <div className="settings-card-header">
@@ -215,9 +215,9 @@ const DashboardSettings = () => {
           </label>
         </div>
 
-        {/* =========================
+        {/* 
             SAVE BUTTON
-        ========================= */}
+         */}
 
         <div className="settings-actions">
           <button type="submit">Save Changes</button>

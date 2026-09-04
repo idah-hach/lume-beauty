@@ -22,9 +22,9 @@ const DashboardProducts = () => {
 
   const [formData, setFormData] = useState(emptyForm);
 
-  // =========================
+  //
   // GET PRODUCTS
-  // =========================
+  //
 
   const fetchProducts = async () => {
     try {
@@ -52,9 +52,9 @@ const DashboardProducts = () => {
     fetchProducts();
   }, []);
 
-  // =========================
+  //
   // GET AUTH TOKEN
-  // =========================
+  //
 
   const getAccessToken = async () => {
     const {
@@ -68,9 +68,9 @@ const DashboardProducts = () => {
     return session.access_token;
   };
 
-  // =========================
+  //
   // DELETE PRODUCT
-  // =========================
+  //
 
   const deleteProduct = async (productId) => {
     const confirmDelete = window.confirm(
@@ -106,9 +106,9 @@ const DashboardProducts = () => {
     }
   };
 
-  // =========================
+  //
   // EDIT PRODUCT
-  // =========================
+  //
 
   const editProduct = (product) => {
     setEditingProduct(product);
@@ -125,9 +125,9 @@ const DashboardProducts = () => {
     setShowForm(true);
   };
 
-  // =========================
+  //
   // HANDLE INPUTS
-  // =========================
+  //
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -138,9 +138,9 @@ const DashboardProducts = () => {
     }));
   };
 
-  // =========================
+  //
   // CREATE / UPDATE PRODUCT
-  // =========================
+  //
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -196,9 +196,9 @@ const DashboardProducts = () => {
     }
   };
 
-  // =========================
+  //
   // CANCEL FORM
-  // =========================
+  //
 
   const cancelForm = () => {
     setFormData(emptyForm);
@@ -206,9 +206,9 @@ const DashboardProducts = () => {
     setShowForm(false);
   };
 
-  // =========================
+  //
   // OPEN ADD FORM
-  // =========================
+  //
 
   const openAddForm = () => {
     setEditingProduct(null);
@@ -218,9 +218,9 @@ const DashboardProducts = () => {
 
   return (
     <section className="dashboard-products">
-      {/* =========================
+      {/* 
           HEADER
-      ========================= */}
+       */}
 
       <div className="section-title">
         <div>
@@ -233,15 +233,15 @@ const DashboardProducts = () => {
         </button>
       </div>
 
-      {/* =========================
+      {/* 
           ERROR
-      ========================= */}
+       */}
 
       {error && <p>{error}</p>}
 
-      {/* =========================
+      {/* 
           FORM
-      ========================= */}
+       */}
 
       {showForm && (
         <form className="product-form" onSubmit={handleSubmit}>
@@ -314,9 +314,9 @@ const DashboardProducts = () => {
         </form>
       )}
 
-      {/* =========================
+      {/* 
           PRODUCTS TABLE
-      ========================= */}
+       */}
 
       <div className="products-table">
         <div className="product-row product-header">

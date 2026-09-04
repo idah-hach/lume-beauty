@@ -11,9 +11,9 @@ const DashboardCustomers = () => {
   const [search, setSearch] = useState("");
   const [selectedCustomer, setSelectedCustomer] = useState(null);
 
-  // =========================
+  //
   // GET AUTH TOKEN
-  // =========================
+  //
 
   const getAccessToken = async () => {
     const {
@@ -27,9 +27,9 @@ const DashboardCustomers = () => {
     return session.access_token;
   };
 
-  // =========================
+  //
   // FETCH ORDERS
-  // =========================
+  //
 
   const fetchOrders = async () => {
     try {
@@ -71,9 +71,9 @@ const DashboardCustomers = () => {
     fetchOrders();
   }, []);
 
-  // =========================
+  //
   // CREATE CUSTOMERS FROM ORDERS
-  // =========================
+  //
 
   const customers = useMemo(() => {
     const customerMap = new Map();
@@ -123,9 +123,9 @@ const DashboardCustomers = () => {
     return Array.from(customerMap.values());
   }, [orders]);
 
-  // =========================
+  //
   // SEARCH
-  // =========================
+  //
 
   const filteredCustomers = useMemo(() => {
     const value = search.toLowerCase().trim();
@@ -142,9 +142,9 @@ const DashboardCustomers = () => {
     });
   }, [customers, search]);
 
-  // =========================
+  //
   // FORMAT DATE
-  // =========================
+  //
 
   const formatDate = (date) => {
     if (!date) return "-";
@@ -152,15 +152,15 @@ const DashboardCustomers = () => {
     return new Date(date).toLocaleString();
   };
 
-  // =========================
+  //
   // JSX
-  // =========================
+  //
 
   return (
     <section className="dashboard-customers">
-      {/* =========================
+      {/* 
           PAGE HEADER
-      ========================= */}
+       */}
 
       <div className="section-title">
         <div>
@@ -171,15 +171,15 @@ const DashboardCustomers = () => {
         <span className="customers-count">{customers.length} Customers</span>
       </div>
 
-      {/* =========================
+      {/* 
           ERROR
-      ========================= */}
+       */}
 
       {error && <div className="dashboard-error">{error}</div>}
 
-      {/* =========================
+      {/* 
           SEARCH
-      ========================= */}
+       */}
 
       <div className="customers-toolbar">
         <input
@@ -190,9 +190,9 @@ const DashboardCustomers = () => {
         />
       </div>
 
-      {/* =========================
+      {/* 
           CUSTOMERS TABLE
-      ========================= */}
+       */}
 
       <div className="customers-table">
         {/* HEADER */}
@@ -259,9 +259,9 @@ const DashboardCustomers = () => {
           ))}
       </div>
 
-      {/* =========================
+      {/* 
           CUSTOMER DETAILS MODAL
-      ========================= */}
+       */}
 
       {selectedCustomer && (
         <div
@@ -322,9 +322,9 @@ const DashboardCustomers = () => {
               </p>
             </div>
 
-            {/* =========================
+            {/* 
                 ORDER HISTORY
-            ========================= */}
+             */}
 
             <div className="customer-order-history">
               <h3>Order History</h3>

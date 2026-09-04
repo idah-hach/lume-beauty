@@ -12,9 +12,9 @@ const prisma = new PrismaClient();
 app.use(cors());
 app.use(express.json());
 
-// =========================
+//
 // TEST
-// =========================
+//
 
 app.get("/", (req, res) => {
   res.json({
@@ -28,10 +28,10 @@ app.get("/api/test", (req, res) => {
   });
 });
 
-// =========================
+//
 // GET ALL PRODUCTS
 // PUBLIC
-// =========================
+//
 
 app.get("/api/products", async (req, res) => {
   try {
@@ -51,10 +51,10 @@ app.get("/api/products", async (req, res) => {
   }
 });
 
-// =========================
+//
 // CREATE PRODUCT
 // PROTECTED
-// =========================
+//
 
 app.post("/api/products", requireAuth, async (req, res) => {
   try {
@@ -87,10 +87,10 @@ app.post("/api/products", requireAuth, async (req, res) => {
   }
 });
 
-// =========================
+//
 // UPDATE PRODUCT
 // PROTECTED
-// =========================
+//
 
 app.put("/api/products/:id", requireAuth, async (req, res) => {
   try {
@@ -122,10 +122,10 @@ app.put("/api/products/:id", requireAuth, async (req, res) => {
   }
 });
 
-// =========================
+//
 // DELETE PRODUCT
 // PROTECTED
-// =========================
+//
 
 app.delete("/api/products/:id", requireAuth, async (req, res) => {
   try {
@@ -149,14 +149,14 @@ app.delete("/api/products/:id", requireAuth, async (req, res) => {
   }
 });
 
-// =========================
+//
 // ORDERS
-// =========================
+//
 
-// =========================
+//
 // CREATE ORDER
 // PUBLIC
-// =========================
+//
 
 app.post("/api/orders", async (req, res) => {
   try {
@@ -263,10 +263,10 @@ app.post("/api/orders", async (req, res) => {
   }
 });
 
-// =========================
+//
 // GET ALL ORDERS
 // PROTECTED
-// =========================
+//
 
 app.get("/api/orders", requireAuth, async (req, res) => {
   try {
@@ -293,10 +293,10 @@ app.get("/api/orders", requireAuth, async (req, res) => {
   }
 });
 
-// =========================
+//
 // UPDATE ORDER STATUS
 // PROTECTED
-// =========================
+//
 
 app.put("/api/orders/:id", requireAuth, async (req, res) => {
   try {
@@ -322,9 +322,9 @@ app.put("/api/orders/:id", requireAuth, async (req, res) => {
   }
 });
 
-// =========================
+//
 // START SERVER
-// =========================
+//
 
 app.listen(PORT, () => {
   console.log(`LUMÉ Beauty API running on http://localhost:${PORT}`);

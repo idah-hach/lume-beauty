@@ -28,9 +28,7 @@ const Checkout = ({
     0,
   );
 
-  // =========================
   // HANDLE INPUT
-  // =========================
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -41,9 +39,7 @@ const Checkout = ({
     }));
   };
 
-  // =========================
   // PLACE ORDER
-  // =========================
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -96,9 +92,7 @@ const Checkout = ({
     }
   };
 
-  // =========================
   // SUCCESS PAGE
-  // =========================
 
   if (success) {
     return (
@@ -123,9 +117,9 @@ const Checkout = ({
   return (
     <section className="checkout-page">
       <div className="checkout-container">
-        {/* =========================
+        {/* 
             HEADER
-        ========================= */}
+       }
 
         <div className="checkout-header">
           <span>YOUR ORDER</span>
@@ -135,9 +129,9 @@ const Checkout = ({
           <p>Review your products and complete your order.</p>
         </div>
 
-        {/* =========================
+        {/* 
             EMPTY CART
-        ========================= */}
+        */}
 
         {cart.length === 0 ? (
           <div className="empty-checkout">

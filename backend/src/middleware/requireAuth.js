@@ -40,9 +40,9 @@ export const requireAuth = async (req, res, next) => {
   }
 };
 
-// =========================
+//
 // ADMIN AUTHORIZATION
-// =========================
+//
 
 export const requireAdmin = (req, res, next) => {
   try {

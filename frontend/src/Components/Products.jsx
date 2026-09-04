@@ -125,7 +125,7 @@ const Products = ({ onAddToCart }) => {
         ))}
       </div>
 
-      {/* ================= LIGHTBOX ================= */}
+      {/*  LIGHTBOX  */}
 
       {selectedProduct && (
         <div

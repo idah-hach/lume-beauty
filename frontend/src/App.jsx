@@ -17,17 +17,17 @@ import ProtectedRoute from "./Dashboard/ProtectedRoute";
 function App() {
   const [cart, setCart] = useState([]);
 
-  // =========================
+  //
   // CLEAR CART
-  // =========================
+  //
 
   const clearCart = () => {
     setCart([]);
   };
 
-  // =========================
+  //
   // ADD TO CART
-  // =========================
+  //
 
   const addToCart = (product) => {
     setCart((currentCart) => {
@@ -54,9 +54,9 @@ function App() {
     });
   };
 
-  // =========================
+  //
   // REMOVE FROM CART
-  // =========================
+  //
 
   const removeFromCart = (productId) => {
     setCart((currentCart) =>
@@ -64,9 +64,9 @@ function App() {
     );
   };
 
-  // =========================
+  //
   // INCREASE QUANTITY
-  // =========================
+  //
 
   const increaseQuantity = (productId) => {
     setCart((currentCart) =>
@@ -81,9 +81,9 @@ function App() {
     );
   };
 
-  // =========================
+  //
   // DECREASE QUANTITY
-  // =========================
+  //
 
   const decreaseQuantity = (productId) => {
     setCart((currentCart) =>
@@ -106,18 +106,18 @@ function App() {
     );
   };
 
-  // =========================
+  //
   // CART COUNT
-  // =========================
+  //
 
   const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <BrowserRouter>
       <Routes>
-        {/* =========================
+        {/* 
             NORMAL WEBSITE
-        ========================= */}
+         */}
 
         <Route
           path="/"
@@ -133,9 +133,9 @@ function App() {
           }
         />
 
-        {/* =========================
+        {/* 
             CHECKOUT
-        ========================= */}
+         */}
 
         <Route
           path="/checkout"
@@ -150,15 +150,15 @@ function App() {
           }
         />
 
-        {/* =========================
+        {/* 
             ADMIN LOGIN
-        ========================= */}
+         */}
 
         <Route path="/admin/login" element={<AdminLogin />} />
 
-        {/* =========================
+        {/* 
             PROTECTED ADMIN DASHBOARD
-        ========================= */}
+         */}
 
         <Route
           path="/admin"

@@ -11,9 +11,9 @@ const DashboardOverview = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // =========================
+  //
   // FETCH DASHBOARD DATA
-  // =========================
+  //
 
   useEffect(() => {
     const fetchDashboardData = async () => {
@@ -67,9 +67,9 @@ const DashboardOverview = () => {
     fetchDashboardData();
   }, []);
 
-  // =========================
+  //
   // CALCULATE STATS
-  // =========================
+  //
 
   const totalSales = orders
     .filter((order) => order.status !== "CANCELLED")
@@ -102,17 +102,17 @@ const DashboardOverview = () => {
     },
   ];
 
-  // =========================
+  //
   // RECENT ORDERS
-  // =========================
+  //
 
   const recentOrders = orders.slice(0, 5);
 
   return (
     <section className="dashboard-overview">
-      {/* =========================
+      {/* 
           HEADER
-      ========================= */}
+       */}
 
       <div className="overview-header">
         <span>WELCOME BACK</span>
@@ -122,15 +122,15 @@ const DashboardOverview = () => {
         <p>Here's what's happening with your LUMÉ Beauty store.</p>
       </div>
 
-      {/* =========================
+      {/* 
           ERROR
-      ========================= */}
+       */}
 
       {error && <p className="dashboard-error">{error}</p>}
 
-      {/* =========================
+      {/* 
           STATS
-      ========================= */}
+       */}
 
       <div className="stats-grid">
         {stats.map((stat) => (
@@ -142,9 +142,9 @@ const DashboardOverview = () => {
         ))}
       </div>
 
-      {/* =========================
+      {/* 
           RECENT ORDERS
-      ========================= */}
+       */}
 
       <div className="recent-orders">
         <div className="recent-orders-header">

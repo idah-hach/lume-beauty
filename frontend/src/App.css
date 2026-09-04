@@ -1,26 +1,3 @@
-/* ==================================================
-   LUMÉ BEAUTY — DESIGN SYSTEM
-   --------------------------------------------------
-   01. Design Tokens
-   02. Base / Reset
-   03. Shared Elements (labels, buttons)
-   04. Navbar
-   05. Cart (overlay + drawer)
-   06. Hero
-   07. Products
-   08. About
-   09. Contact
-   10. Footer
-   11. Keyframes
-   12. Scroll Reveal (progressive enhancement)
-   13. Reduced Motion
-   14. Responsive
-================================================== */
-
-/* ==================================================
-   01. DESIGN TOKENS
-================================================== */
-
 :root {
   /* Surfaces */
   --bg: #f7f3ee;
@@ -61,10 +38,6 @@
   /* Layout */
   --nav-h: 78px;
 }
-
-/* ==================================================
-   02. BASE / RESET
-================================================== */
 
 * {
   margin: 0;
@@ -120,10 +93,6 @@ section[id] {
   outline-offset: 3px;
   border-radius: 4px;
 }
-
-/* ==================================================
-   03. SHARED ELEMENTS
-================================================== */
 
 /* --- Eyebrow labels --- */
 
@@ -264,9 +233,7 @@ section[id] {
   border-color: var(--ink);
 }
 
-/* ==================================================
-   04. NAVBAR
-================================================== */
+/* 04. NAVBAR */
 
 .navbar {
   position: sticky;
@@ -428,9 +395,7 @@ section[id] {
   color: var(--accent-deep);
 }
 
-/* ==================================================
-   05. CART (OVERLAY + DRAWER)
-================================================== */
+/* 05. CART (OVERLAY + DRAWER) */
 
 .cart-overlay {
   position: fixed;
@@ -841,9 +806,7 @@ section[id] {
   transform: scale(0.98);
 }
 
-/* ==================================================
-   06. HERO
-================================================== */
+/* 06. HERO */
 
 .hero {
   position: relative;
@@ -978,9 +941,7 @@ section[id] {
   gap: 16px;
 }
 
-/* ==================================================
-   07. PRODUCTS
-================================================== */
+/* 07. PRODUCTS */
 
 .products {
   padding: 110px 8%;
@@ -1243,9 +1204,7 @@ section[id] {
   transform: scale(0.97);
 }
 
-/* ==================================================
-   07b. PRODUCT LIGHTBOX
-================================================== */
+/* 07b. PRODUCT LIGHTBOX */
 
 .lightbox-overlay {
   position: fixed;
@@ -1494,9 +1453,7 @@ section[id] {
   transform: rotate(90deg);
 }
 
-/* ==================================================
-   08. ABOUT
-================================================== */
+/* 08. ABOUT */
 
 .about {
   padding: 110px 8%;
@@ -1551,9 +1508,7 @@ section[id] {
   margin-top: 16px;
 }
 
-/* ==================================================
-   09. CONTACT
-================================================== */
+/* 09. CONTACT */
 
 .contact {
   position: relative;
@@ -1705,9 +1660,7 @@ section[id] {
   border-color: var(--ink);
 }
 
-/* ==================================================
-   10. FOOTER
-================================================== */
+/* 10. FOOTER */
 
 .footer {
   padding: 76px 8% 32px;
@@ -1854,10 +1807,8 @@ section[id] {
 
   letter-spacing: 0.08em;
 }
-
-/* ==================================================
-   11. KEYFRAMES
-================================================== */
+/* 
+   11. KEYFRAMES */
 
 @keyframes fadeIn {
   from {
@@ -1941,9 +1892,7 @@ section[id] {
   }
 }
 
-/* ==================================================
-   12. SCROLL REVEAL
-================================================== */
+/* 12. SCROLL REVEAL */
 
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
@@ -1981,9 +1930,7 @@ section[id] {
   }
 }
 
-/* ==================================================
-   13. REDUCED MOTION
-================================================== */
+/* 13. REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -2001,9 +1948,7 @@ section[id] {
   }
 }
 
-/* ==================================================
-   14. RESPONSIVE
-================================================== */
+/* 14. RESPONSIVE */
 
 /* --- Laptop / small desktop --- */
 
@@ -2317,9 +2262,7 @@ section[id] {
   margin: 0 auto;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 .checkout-header {
   text-align: center;
@@ -2397,9 +2340,8 @@ section[id] {
   color: #222;
 }
 
-/* =========================
-   CART ITEMS
-========================= */
+/* 
+   CART ITEMS */
 
 .checkout-item {
   display: grid;
@@ -2536,9 +2478,7 @@ section[id] {
   color: #222;
 }
 
-/* =========================
-   CUSTOMER FORM
-========================= */
+/* CUSTOMER FORM */
 
 .checkout-form {
   display: flex;
@@ -2582,9 +2522,7 @@ section[id] {
   min-height: 110px;
 }
 
-/* =========================
-   SUMMARY
-========================= */
+/* SUMMARY */
 
 .checkout-summary {
   grid-column: 2;
@@ -2631,9 +2569,7 @@ section[id] {
   font-size: 18px;
 }
 
-/* =========================
-   PLACE ORDER
-========================= */
+/* PLACE ORDER */
 
 .place-order-btn {
   width: 100%;
@@ -2685,9 +2621,7 @@ section[id] {
   color: #222;
 }
 
-/* =========================
-   ERROR
-========================= */
+/* ERROR */
 
 .checkout-error {
   grid-column: 1 / -1;
@@ -2705,9 +2639,7 @@ section[id] {
   font-size: 13px;
 }
 
-/* =========================
-   EMPTY CHECKOUT
-========================= */
+/* EMPTY CHECKOUT */
 
 .empty-checkout {
   max-width: 600px;
@@ -2739,9 +2671,7 @@ section[id] {
   color: #777;
 }
 
-/* =========================
-   SUCCESS
-========================= */
+/* SUCCESS */
 
 .order-success {
   max-width: 650px;
@@ -2797,9 +2727,7 @@ section[id] {
   background: #9b8065;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 850px) {
   .checkout-page {
@@ -2868,9 +2796,7 @@ section[id] {
   }
 }
 
-/* ==================================================
-   ADMIN PROFILE + LOGOUT
-================================================== */
+/* ADMIN PROFILE + LOGOUT */
 
 .admin-profile {
   display: flex;
@@ -2884,9 +2810,7 @@ section[id] {
   font-weight: 600;
 }
 
-/* =========================
-   LOGOUT BUTTON
-========================= */
+/* LOGOUT BUTTON */
 
 .admin-logout-button {
   width: 100%;
@@ -3017,9 +2941,7 @@ section[id] {
   transform: none;
 }
 
-/* ==================================================
-   ADMIN LOGIN BUTTON
-================================================== */
+/* ADMIN LOGIN BUTTON */
 
 .admin-login-nav {
   display: inline-flex;
@@ -3076,9 +2998,7 @@ section[id] {
   display: none;
 }
 
-/* =========================
-   NAVBAR ACTIONS
-========================= */
+/* NAVBAR ACTIONS */
 
 .navbar-actions {
   display: flex;
@@ -3088,9 +3008,7 @@ section[id] {
   gap: 14px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 768px) {
   .desktop-admin-login {
@@ -3126,9 +3044,7 @@ section[id] {
   }
 }
 
-/* =========================================================
-   ADMIN LOGIN
-========================================================= */
+/* ADMIN LOGIN */
 
 .admin-login-page {
   min-height: 100vh;
@@ -3202,9 +3118,7 @@ section[id] {
   text-align: center;
 }
 
-/* =========================
-   FORM
-========================= */
+/* FORM */
 
 .admin-login-card form {
   display: flex;
@@ -3255,9 +3169,7 @@ section[id] {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
 }
 
-/* =========================
-   ERROR
-========================= */
+/* ERROR */
 
 .admin-login-error {
   margin: -2px 0 0 !important;
@@ -3332,9 +3244,7 @@ section[id] {
   cursor: not-allowed;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 480px) {
   .admin-login-page {

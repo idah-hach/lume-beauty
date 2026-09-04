@@ -11,9 +11,9 @@ const DashboardOrders = () => {
   const [selectedOrder, setSelectedOrder] = useState(null);
   const [updatingStatus, setUpdatingStatus] = useState(false);
 
-  // =========================
+  //
   // GET AUTH TOKEN
-  // =========================
+  //
 
   const getAccessToken = async () => {
     const {
@@ -27,9 +27,9 @@ const DashboardOrders = () => {
     return session.access_token;
   };
 
-  // =========================
+  //
   // FETCH ORDERS
-  // =========================
+  //
 
   const fetchOrders = async () => {
     try {
@@ -63,9 +63,9 @@ const DashboardOrders = () => {
     fetchOrders();
   }, []);
 
-  // =========================
+  //
   // UPDATE STATUS
-  // =========================
+  //
 
   const updateStatus = async (orderId, newStatus) => {
     try {
@@ -119,31 +119,31 @@ const DashboardOrders = () => {
     }
   };
 
-  // =========================
+  //
   // FORMAT DATE
-  // =========================
+  //
 
   const formatDate = (date) => {
     return new Date(date).toLocaleString();
   };
 
-  // =========================
+  //
   // GET ITEM COUNT
-  // =========================
+  //
 
   const getItemCount = (order) => {
     return order.items.reduce((total, item) => total + item.quantity, 0);
   };
 
-  // =========================
+  //
   // JSX
-  // =========================
+  //
 
   return (
     <section className="dashboard-orders">
-      {/* =========================
+      {/* 
           PAGE HEADER
-      ========================= */}
+       */}
 
       <div className="section-title">
         <div>
@@ -154,15 +154,15 @@ const DashboardOrders = () => {
         <span className="orders-count">{orders.length} Orders</span>
       </div>
 
-      {/* =========================
+      {/* 
           ERROR
-      ========================= */}
+       */}
 
       {error && <p className="dashboard-error">{error}</p>}
 
-      {/* =========================
+      {/* 
           ORDERS TABLE
-      ========================= */}
+       */}
 
       <div className="orders-table">
         <div className="order-row order-header">
@@ -236,9 +236,9 @@ const DashboardOrders = () => {
           ))}
       </div>
 
-      {/* =========================
+      {/* 
           ORDER DETAILS
-      ========================= */}
+       */}
 
       {selectedOrder && (
         <div
