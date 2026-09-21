@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
-import { requireAuth } from "./middleware/requireAuth.js";
+import { requireAuth, requireAdmin } from "./middleware/requireAuth.js";
 
 const app = express();
 
@@ -55,7 +55,7 @@ app.get("/api/products", async (req, res) => {
 // PROTECTED
 //
 
-app.post("/api/products", requireAuth, async (req, res) => {
+app.post("/api/products", requireAuth, requireAdmin, async (req, res) => {
   try {
     const { name, description, price, image, category, stock } = req.body;
 
@@ -91,7 +91,7 @@ app.post("/api/products", requireAuth, async (req, res) => {
 // PROTECTED
 //
 
-app.put("/api/products/:id", requireAuth, async (req, res) => {
+app.put("/api/products/:id", requireAuth, requireAdmin, async (req, res) => {
   try {
     const id = Number(req.params.id);
 
@@ -126,7 +126,7 @@ app.put("/api/products/:id", requireAuth, async (req, res) => {
 // PROTECTED
 //
 
-app.delete("/api/products/:id", requireAuth, async (req, res) => {
+app.delete("/api/products/:id", requireAuth, requireAdmin, async (req, res) => {
   try {
     const id = Number(req.params.id);
 
@@ -164,6 +164,19 @@ app.post("/api/orders", async (req, res) => {
     if (!customerName || !phone || !address || !items || items.length === 0) {
       return res.status(400).json({
         message: "Customer information and order items are required",
+      });
+    }
+    // Validate items
+    const validItems = items.every(
+      (item) =>
+        Number.isInteger(Number(item.productId)) &&
+        Number.isInteger(Number(item.quantity)) &&
+        Number(item.quantity) > 0,
+    );
+
+    if (!validItems) {
+      return res.status(400).json({
+        message: "Invalid order items",
       });
     }
 
@@ -267,7 +280,7 @@ app.post("/api/orders", async (req, res) => {
 // PROTECTED
 //
 
-app.get("/api/orders", requireAuth, async (req, res) => {
+app.get("/api/orders", requireAuth, requireAdmin, async (req, res) => {
   try {
     const orders = await prisma.order.findMany({
       orderBy: {
@@ -297,7 +310,7 @@ app.get("/api/orders", requireAuth, async (req, res) => {
 // PROTECTED
 //
 
-app.put("/api/orders/:id", requireAuth, async (req, res) => {
+app.put("/api/orders/:id", requireAuth, requireAdmin, async (req, res) => {
   try {
     const id = Number(req.params.id);
     const { status } = req.body;
